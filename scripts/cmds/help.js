@@ -3,14 +3,14 @@ const axios = require("axios");
 const path = require("path");
 const { getPrefix } = global.utils;
 const { commands, aliases } = global.GoatBot;
-const doNotDelete = "[ 🌟 | 𝐁𝐀𝐘𝐉𝐈𝐃 𝐗𝐓 ]";
+const doNotDelete = "[ ✳𝐁𝐀𝐘𝐉𝐈𝐃 𝐗𝐓 ╰_╯ ]"; // changing this wont change the goatbot V2 of list cmd it is just a decoyy
 
 module.exports = {
   config: {
     name: "help",
     version: "1.17",
-    author: "MR.AYAN", //**orginal author fb I'd : https://m.me/NOOBS.DEVELOPER.AYAN **//
-    countDown: 5,
+    author: "BaYjid", // original author MOHAMMAD BAYJID
+    countDown: 10,
     role: 0,
     shortDescription: {
       en: "View command usage and list all commands directly",
@@ -26,51 +26,45 @@ module.exports = {
   },
 
   onStart: async function ({ message, args, event, threadsData, role }) {
-  const { threadID } = event;
-  const threadData = await threadsData.get(threadID);
-  const prefix = getPrefix(threadID);
+    const { threadID } = event;
+    const threadData = await threadsData.get(threadID);
+    const prefix = getPrefix(threadID);
 
-  if (args.length === 0) {
+    if (args.length === 0) {
       const categories = {};
       let msg = "";
 
-      msg += `╔═══════════╗\n 𝐁𝐀𝐘𝐉𝐈𝐃 𝐗𝐓 🌟\n╚═══════════╝`;
+      msg += `╔═════════════╗\n       ♡︎𝘾𝙈𝘿 𝙇𝙄𝙎𝙏♡︎\n╚═════════════╝`; // replace with your name 
 
       for (const [name, value] of commands) {
-          if (value.config.role > 1 && role < value.config.role) continue;
+        if (value.config.role > 1 && role < value.config.role) continue;
 
-          const category = value.config.category || "Uncategorized";
-          categories[category] = categories[category] || { commands: [] };
-          categories[category].commands.push(name);
+        const category = value.config.category || "Uncategorized";
+        categories[category] = categories[category] || { commands: [] };
+        categories[category].commands.push(name);
       }
 
-      Object.keys(categories).forEach(category => {
-          if (category !== "info") {
-              msg += `\n╭─╮\n│『 ${category.toUpperCase()} 』`;
+      Object.keys(categories).forEach((category) => {
+        if (category !== "info") {
+          msg += `\n╭────────────────♡︎\n│ 『  ${category.toUpperCase()}  』`;
 
-              const names = categories[category].commands.sort();
-              for (let i = 0; i < names.length; i += 3) {
-                  const cmds = names.slice(i, i + 3).map(item => `✧${item}`);
-                  msg += `\n│${cmds.join(" ".repeat(Math.max(1, 10 - cmds.join("").length)))}`;
-              }
-
-              msg += `\n╰────────────ꔪ`;
+          const names = categories[category].commands.sort();
+          for (let i = 0; i < names.length; i += 3) {
+            const cmds = names.slice(i, i + 3).map((item) => `⌾${item}`);
+            msg += `\n│ ${cmds.join(" ".repeat(Math.max(1, 10 - cmds.join("").length)))}`;
           }
+
+          msg += `\n╰───────────ꔪ`;
+        }
       });
 
       const totalCommands = commands.size;
-      msg += `\n𝗖𝘂𝗿𝗿𝗲𝗻𝘁𝗹𝘆, 𝘁𝗵𝗲 𝗯𝗼𝘁 𝗵𝗮𝘀 ${totalCommands} 𝗰𝗼𝗺𝗺𝗮𝗻𝗱𝘀 𝘁𝗵𝗮𝘁 𝗰𝗮𝗻 𝗯𝗲 𝘂𝘀𝗲𝗱\n`;
-      msg += `𝗧𝘆𝗽𝗲 ${prefix}𝗵𝗲𝗹𝗽 [𝐁𝐀𝐘𝐉𝐈𝐃 𝐗𝐓] 𝘁𝗼 𝘃𝗶𝗲𝘄 𝘁𝗵𝗲 𝗱𝗲𝘁𝗮𝗶𝗹𝘀 𝗼𝗳 𝘁𝗵𝗮𝘁 𝗰𝗼𝗺𝗺𝗮𝗻𝗱\n`;
-      msg += `🌟 | 𝐁𝐀𝐘𝐉𝐈𝐃 𝐗𝐓 `;
+      msg += `\n𝗖𝘂𝗿𝗿𝗲𝗻𝘁𝗹𝘆, 𝘁𝗵𝗲 𝗯𝗼𝘁 𝗵𝗮𝘀 [${totalCommands}] 𝗰𝗼𝗺𝗺𝗮𝗻𝗱𝘀 𝘁𝗵𝗮𝘁 𝗰𝗮𝗻 𝗯𝗲 𝘂𝘀𝗲𝗱\n`;
+      msg += `𝗧𝘆𝗽𝗲 ${prefix}𝗵𝗲𝗹𝗽 𝗰𝗺𝗱𝗡𝗮𝗺𝗲 𝘁𝗼 𝘃𝗶𝗲𝘄 𝘁𝗵𝗲 𝗱𝗲𝘁𝗮𝗶𝗹𝘀 𝗼𝗳 𝘁𝗵𝗮𝘁 𝗰𝗼𝗺𝗺𝗮𝗻𝗱.\n`;
+      msg += `㋛︎ | 𝐁𝐀𝐘𝐉𝐈𝐃 𝐗𝐓`; // its not decoy so change it if you want 
 
-      const helpListImage = helpListImages[Math.floor(Math.random() * helpListImages.length)];
-
-
-      await message.reply({
-          body: msg,
-          attachment: await global.utils.getStreamFromURL(helpListImage)
-      });
-  } else {
+      await message.reply(msg);
+    } else {
       const commandName = args[0].toLowerCase();
       const command = commands.get(commandName) || commands.get(aliases.get(commandName));
 
@@ -88,9 +82,9 @@ module.exports = {
 
         const response = `━━━━━━━━━━━━━━━━━♡
    
-   ➢  ♡𝐍𝐀𝐌𝐄♡ 
+   ♡𝐍𝐀𝐌𝐄♡ 
     ➠${configCommand.name}
-   ➢ 𝙄𝙉𝙁𝙊
+   ✦ 𝙄𝙉𝙁𝙊
     
      ➠𝗗𝗲𝘀𝗰𝗿𝗶𝗽𝘁𝗶𝗼𝗻 : ${longDescription}
      ➠𝗼𝘁𝗵𝗲𝗿 𝗻𝗮𝗺𝗲𝘀 : ${configCommand.aliases ? configCommand.aliases.join(", ") : "Do not have"}
@@ -99,10 +93,10 @@ module.exports = {
      ➠𝗩𝗲𝗿𝘀𝗶𝗼𝗻 : ${configCommand.version || "1.0"}
      ➠𝗥𝗼𝗹𝗲 : ${roleText}
      ➠𝗧𝗶𝗺𝗲 𝗽𝗲𝗿 𝗰𝗼𝗺𝗺𝗮𝗱: ${configCommand.countDown || 1}s
-   ➢ 𝙐𝙎𝘼𝙂𝙀
+     ✦𝙐𝙎𝘼𝙂𝙀
      ➠ ${usage}
-   ➢ 𝙉𝙊𝙏𝙀𝙎
-    scripts coding by 𝐌𝐎𝐇𝐀𝐌𝐌𝐀𝐃 𝐁𝐀𝐘𝐉𝐈𝐃
+      ✦𝙉𝙊𝙏𝙀𝙎
+    scripts coding by MOHAMMAD BAYJID
   ━━━━━━━━━━━━━━━━━━ꔪ`;
 
         await message.reply(response);
@@ -122,4 +116,4 @@ function roleTextToString(roleText) {
     default:
       return "Unknown role";
   }
-}
+} 
