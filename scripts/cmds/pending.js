@@ -47,15 +47,7 @@ onReply: async function({ api, event, Reply, getLang, commandName, prefix }) {
         const index = body.split(/\s+/);
         for (const ArYanIndex of index) {
             if (isNaN(ArYanIndex) || ArYanIndex <= 0 || ArYanIndex > Reply.pending.length) return api.sendMessage(getLang("invaildNumber", ArYanIndex), threadID, messageID);
-            api.sendMessage(`successful add 
-
-🪷Bot Owner: 𝐌𝐎𝐇𝐀𝐌𝐌𝐀𝐃 𝐁𝐀𝐘𝐉𝐈𝐃 🐸🪽
-
-🏵️Bot Owner Telegram: @MOHAMMADBAYJID👽🪽
-
-🌸You Need Help sms Whatsapp: 01638007072🤡🪽
-
-💐FB LINK: https://www.facebook.com/BAYJID.404 🫂🪽 `, Reply.pending[ArYanIndex - 1].threadID);
+            api.sendMessage(`⚪⚫🟡🟢🔴🔵\n\n🤖 𝐓𝐡𝐚𝐧𝐤 𝐲𝐨𝐮 𝐟𝐨𝐫 𝐢𝐧𝐯𝐢𝐭𝐢𝐧𝐠 𝐦𝐞!🌟\n \n🚀 𝐋𝐞𝐭'𝐬 𝐠𝐞𝐭 𝐬𝐭𝐚𝐫𝐭𝐞𝐝! 𝐇𝐞𝐫𝐞'𝐬 𝐬𝐨𝐦𝐞 𝐮𝐬𝐞𝐟𝐮𝐥 𝐢𝐧𝐟𝐨𝐫𝐦𝐚𝐭𝐢𝐨𝐧:\n \n- 𝐁𝐨𝐭 𝐏𝐫𝐞𝐟𝐢𝐱: !\n \n- 𝐓𝐨 𝐝𝐢𝐬𝐜𝐨𝐯𝐞𝐫 𝐭𝐡𝐞 𝐥𝐢𝐬𝐭 𝐨𝐟 𝐚𝐯𝐚𝐢𝐥𝐚𝐛𝐥𝐞 𝐜𝐨𝐦𝐦𝐚𝐧𝐝𝐬, 𝐓𝐲𝐩𝐞 : %𝐡𝐞𝐥𝐩\n \n📚 𝐍𝐞𝐞𝐬 𝐚𝐬𝐬𝐢𝐬𝐭𝐚𝐧𝐜𝐞 𝐨𝐫 𝐡𝐚𝐯𝐞 𝐪𝐮𝐬𝐭𝐢𝐨𝐧𝐬? 𝐅𝐞𝐫𝐥 𝐟𝐫𝐞𝐞 𝐭𝐨 𝐫𝐞𝐚𝐜𝐡 𝐨𝐮𝐭 𝐚𝐧𝐲𝐭𝐢𝐦𝐞. 𝐄𝐧𝐣𝐨𝐲 𝐲𝐨𝐮 𝐭𝐮𝐦𝐞 𝐢𝐧 𝐭𝐡𝐞 𝐠𝐫𝐨𝐮𝐩! 🌈✨ `, Reply.pending[ArYanIndex - 1].threadID);
             count+=1;
         }
         return api.sendMessage(getLang("approveSuccess", count), threadID, messageID);
