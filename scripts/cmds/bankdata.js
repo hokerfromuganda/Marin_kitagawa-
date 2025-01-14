@@ -1,0 +1,1 @@
+{"100078140834638":{"bank":500,"lastInterestClaimed":1734333677196},"100084690500330":{"bank":500,"lastInterestClaimed":1734333794671},"61566533590967":{"bank":0,"lastInterestClaimed":1734869234105},"100051500153303":{"bank":100,"lastInterestClaimed":1734934540830}}
