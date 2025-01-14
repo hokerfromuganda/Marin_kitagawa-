@@ -1,22 +1,46 @@
 module.exports = {
- config: {
-	 name: "bal",
-	 version: "1.0",
-	 author: "AceGun",
-	 countDown: 5,
-	 role: 0,
-	 shortDescription: "no prefix",
-	 longDescription: "no prefix",
-	 category: "no prefix",
- },
+	config: {
+		name: "balance",
+		aliases: ["bal"],
+		version: "1.2",
+		author: "NTKhang",
+		countDown: 5,
+		role: 0,
+		description: {
+			vi: "xem số tiền hiện có của bạn hoặc người được tag",
+			en: "view your money or the money of the tagged person"
+		},
+		category: "economy",
+		guide: {
+			vi: "   {pn}: xem số tiền của bạn"
+				+ "\n   {pn} <@tag>: xem số tiền của người được tag",
+			en: "   {pn}: view your money"
+				+ "\n   {pn} <@tag>: view the money of the tagged person"
+		}
+	},
 
- onStart: async function(){}, 
- onChat: async function({ event, message, getLang }) {
- if (event.body && event.body.toLowerCase() === "bal") {
- return message.reply({
- body: " 「 FUCK YOU 😰🖕\n\n𝗕𝗢𝗧 𝗢𝗪𝗡𝗘𝗥\n𝐌𝐎𝐇𝐀𝐌𝐌𝐀𝐃 𝐁𝐀𝐘𝐉𝐈𝐃」",
- attachment: await global.utils.getStreamFromURL("https://i.imgur.com/SBupaKE.jpeg")
- });
- }
- }
-}
+	langs: {
+		vi: {
+			money: "Bạn đang có %1$",
+			moneyOf: "%1 đang có %2$"
+		},
+		en: {
+			money: "You have %1$",
+			moneyOf: "%1 has %2$"
+		}
+	},
+
+	onStart: async function ({ message, usersData, event, getLang }) {
+		if (Object.keys(event.mentions).length > 0) {
+			const uids = Object.keys(event.mentions);
+			let msg = "";
+			for (const uid of uids) {
+				const userMoney = await usersData.get(uid, "money");
+				msg += getLang("moneyOf", event.mentions[uid].replace("@", ""), userMoney) + '\n';
+			}
+			return message.reply(msg);
+		}
+		const userData = await usersData.get(event.senderID);
+		message.reply(getLang("money", userData.money));
+	}
+};
