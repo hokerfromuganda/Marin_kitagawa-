@@ -16,12 +16,12 @@ config: {
   onStart: async function ({ api, event }) {
   try {
     const ownerInfo = {
-      name: 'BAYJID Ai',
-      gender: 'Male',
+      name: '𝐄𝐬𝐭𝐞𝐢𝐯𝐞𝐫𝐱𝐞 𝐋𝐨𝐦𝐢𝐧𝐨𝐮𝐬 𝐈𝐈',
+      gender: '𝐌𝐚𝐥𝐞',
       age: '17+',
-      height: 'Unknown',
-      facebookLink: 'https://www.facebook.com/BAYJID.404',
-      nick: 'BIJU'
+      height: '𝐔𝐧𝐤𝐧𝐨𝐰𝐧',
+      facebookLink: 'https://www.facebook.com/xnxx.com500k?mibextid=ZbWKwL',
+      nick: '𝐑𝐀𝐅𝐈'
     };
 
     const bold = 'https://i.imgur.com/DDO686J.mp4'; // Replace with your Google Drive videoid link https://drive.google.com/uc?export=download&id=here put your video id
@@ -38,13 +38,13 @@ config: {
     fs.writeFileSync(videoPath, Buffer.from(videoResponse.data, 'binary'));
 
     const response = `
-Owner Information:🧾
-Name: ${ownerInfo.name}
-Gender: ${ownerInfo.gender}
-Age: ${ownerInfo.age}
-Height: ${ownerInfo.height}
-Facebook: ${ownerInfo.facebookLink}
-Nick: ${ownerInfo.nick}
+🔰𝗢𝘄𝗻𝗲𝗿 𝗜𝗻𝗳𝗼𝗿𝗺𝗮𝘁𝗶𝗼𝗻:🧾
+➪𝐍𝐚𝐦𝐞: ${ownerInfo.name}
+➪𝐆𝐞𝐧𝐝𝐞𝐫: ${ownerInfo.gender}
+➪𝐀𝐠𝐞: ${ownerInfo.age}
+➪𝐇𝐞𝐢𝐠𝐣𝐭: ${ownerInfo.height}
+➪𝐅𝐚𝐜𝐞𝐛𝐨𝐨𝐤: ${ownerInfo.facebookLink}
+➪𝐍𝐢𝐜𝐤: ${ownerInfo.nick}
 `;
 
 
