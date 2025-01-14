@@ -1,45 +1,53 @@
 const axios = require("axios");
 
-module.exports = {
+const baseApiUrl = async () => {
+  const base = await axios.get(
+    `https://raw.githubusercontent.com/Blankid018/D1PT0/main/baseApiUrl.json`,
+  );
+  return base.data.api;
+};
+
+(module.exports = {
   config: {
     name: "lyrics",
     version: "1.0",
-    author: "MILAN",
+    author: "Nazrul",
     countDown: 5,
     role: 0,
-    shortDescription: {
-      vi: "Nhận lời bài hát",
-      en: "Get song lyrics"
-    },
-    longDescription: {
-      vi: "Nhận lời bài hát với Hình ảnh của họ",
+    description: {
       en: "Get song lyrics with their Images"
     },
-    category: "info",
+    category: "Song Lyrics",
     guide: {
       en: "{pn} <song name>"
     }
   },
-  
-  onStart: async function ({ api, event, args, message }) {
+
+  onStart: async ({ api, event, args }) => {
     try {
-      const lyrics = args.join(' ');
-      if (!lyrics) {
+      const Songs = args.join(' ');
+      if (!Songs) {
         return api.sendMessage("Please provide a song name!", event.threadID, event.messageID);
       }
-      const { data } = await axios.get(`https://milanbhandari.imageapi.repl.co/lyrics`, {
-        params: {
-          query: lyrics 
-        }
-      });
-      const messageData = {
-        body: `❏Title: ${data.title || ''}\n\n❏Artist: ${data.artist || ''}\n\n❏Lyrics:\n\n ${data.lyrics || ''}`,
-        attachment: await global.utils.getStreamFromURL(data.image)
+
+      const res = await axios.get(`${await baseApiUrl()}/lyrics2?songName=${encodeURIComponent(Songs)}`);
+      const data = res.data;
+      if (!data.title || !data.artist || !data.lyrics) {
+        return api.sendMessage("An error occurred while fetching lyrics!", event.threadID, event.messageID);
+      }
+
+      const songMessage = { 
+        body: `❏♡𝐒𝐨𝐧𝐠 𝐓𝐢𝐭𝐥𝐞: ${data.title}\n\n❏♡𝐀𝐫𝐭𝐢𝐬𝐭: ${data.artist}\n\n❏♡𝐒𝐨𝐧𝐠 𝐋𝐲𝐫𝐢𝐜𝐬:\n\n${data.lyrics}` 
       };
-      return api.sendMessage(messageData, event.threadID);
+      
+      if (data.image) {
+        const stream = await axios.get(data.image, { responseType: 'stream' });
+        songMessage.attachment = stream.data;
+      }
+
+      return api.sendMessage(songMessage, event.threadID, event.messageID);
     } catch (error) {
-      console.error(error);
-      return api.sendMessage("An error occurred while fetching lyrics!", event.threadID, event.messageID);
+    api.sendMessage("error: " + error.message, event.threadID, event.messageID);
     }
   }
-};
+});
