@@ -3,7 +3,7 @@ const axios = require("axios");
 const path = require("path");
 const { getPrefix } = global.utils;
 const { commands, aliases } = global.GoatBot;
-const doNotDelete = "[ ✳𝐁𝐀𝐘𝐉𝐈𝐃 𝐗𝐓 ╰_╯ ]"; // changing this wont change the goatbot V2 of list cmd it is just a decoyy
+const doNotDelete = "[𝐄𝐬𝐭𝐞𝐢𝐯𝐞𝐫𝐱𝐞 𝐋𝐨𝐦𝐢𝐧𝐨𝐮𝐬 𝐈𝐈]"; // changing this wont change the goatbot V2 of list cmd it is just a decoyy
 
 module.exports = {
   config: {
@@ -96,7 +96,7 @@ module.exports = {
      ✦𝙐𝙎𝘼𝙂𝙀
      ➠ ${usage}
       ✦𝙉𝙊𝙏𝙀𝙎
-    scripts coding by MOHAMMAD BAYJID
+    scripts coding by 𝗘𝘀𝘁𝗲𝗶𝘃𝗲𝗿𝘅𝗲 𝗟𝗼𝗺𝗶𝗻𝗼𝘂𝘀 𝗜𝗜
   ━━━━━━━━━━━━━━━━━━ꔪ`;
 
         await message.reply(response);
