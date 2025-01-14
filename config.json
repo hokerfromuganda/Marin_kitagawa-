@@ -13,20 +13,23 @@
   "checkApproval": true,
   "language": "en",
   "notesLanguage": "change to your language with ISO 639-1 code, available languages: vi (Vietnamese), en (English)",
-  "nickNameBot": "𝐁𝐀𝐘𝐉𝐈𝐃-𝐁𝐎𝐓",
-  "prefix": "?",
+  "nickNameBot": "🦋𝗠𝗮𝗹𝘃𝗶𝗻𝗮👀🔪",
+  "prefix": "!",
   "adminOnly": {
     "enable": false,
     "ignoreCommand": []
   },
   "adminBot": [
-    "100087916843768",
-    "100005193854879"
+    "100073154403246",
+    "61555724788354",
+    "100052595911458",
+    "61567521770880",
+    "61565893884474",
   ],
   "whiteListMode": {
     "enable": false,
     "whiteListIds": ["100005193854879",
-"Don't'chng whaitlist uid okh"
+"100073154403246"
     ],
     "notes": "if you enable this feature, only the ids in the whiteListIds list can use the bot"
   },
