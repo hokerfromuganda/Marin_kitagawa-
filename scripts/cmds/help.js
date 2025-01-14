@@ -34,7 +34,7 @@ module.exports = {
       const categories = {};
       let msg = "";
 
-      msg += `╔╦══• •✠•⚫•✠ • •══╦╗\n ミ𝐄𝐬𝐭𝐞𝐢𝐯𝐞𝐫𝐱𝐞 𝐋𝐨𝐦𝐢𝐧𝐨𝐮𝐬 𝐈𝐈彡\n╚╩══• •✠•⚫•✠ • •══╩╝\n━━━━━━━━━━━━━━━━`; // replace with your name 
+      msg += `╔╦══•🔵🔴⚪⚫•══╦╗\nミ𝐄𝐬𝐭𝐞𝐢𝐯𝐞𝐫𝐱𝐞 𝐋𝐨𝐦𝐢𝐧𝐨𝐮𝐬 𝐈𝐈彡\n╚╩══•🔵🔴⚪⚫•══╩╝\n━━━━━━━━━━━━━━━━`; // replace with your name 
 
       for (const [name, value] of commands) {
         if (value.config.role > 1 && role < value.config.role) continue;
@@ -61,8 +61,8 @@ module.exports = {
 
       const totalCommands = commands.size;
       msg += `🔰𝐓𝐨𝐭𝐚𝐥🏁${totalCommands}🏁𝐜𝐨𝐦𝐦𝐚𝐧𝐝𝐬💫\n╭‣ 𝐀𝐝𝐦𝐢𝐧 👑\n╰‣ 𝐄𝐬𝐭𝐞𝐢𝐯𝐞𝐫𝐱𝐞 𝐋𝐨𝐦𝐢𝐧𝐨𝐮𝐬 𝐈𝐈\n╭‣ 𝐅𝐚𝐜𝐞𝐛𝐨𝐨𝐤 ⓕ\n╰‣m.me/100073154403246`;
-      msg += `╭‣ 𝐎𝐭𝐡𝐞𝐫 𝐃𝐞𝐭𝐚𝐢𝐥𝐬⚠️\n╰‣If you Don't know how to use commands Then Type /help [commandName] to see command usages.\n━━━━━━━━━━━━━━━`;
-      msg += `\n╭──── • 🩶 • ─────╮\n   𝐄𝐬𝐭𝐞𝐢𝐯𝐞𝐫𝐱𝐞 𝐋𝐨𝐦𝐢𝐧𝐨𝐮𝐬 𝐈𝐈\n╰──── • 🩶 • ─────╯`; // its not decoy so change it if you want 
+      msg += `\n╭‣ 𝐎𝐭𝐡𝐞𝐫 𝐃𝐞𝐭𝐚𝐢𝐥𝐬⚠️\n╰‣If you Don't know how to use commands Then Type /help [commandName] to see command usages.\n━━━━━━━━━━━━━━━`;
+      msg += `\n╭──── • 🔵🔴 • ─────╮\n𝐄𝐬𝐭𝐞𝐢𝐯𝐞𝐫𝐱𝐞 𝐋𝐨𝐦𝐢𝐧𝐨𝐮𝐬 𝐈𝐈\n╰──── • 🔵🔴 • ─────╯`; // its not decoy so change it if you want 
 
       const helpListImages = [
         "https://i.postimg.cc/c4nYrnqS/be9e77ea94294e6f96a06af32a16adeb.jpg", // add image link here
