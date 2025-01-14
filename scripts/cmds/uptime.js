@@ -56,7 +56,7 @@ function getUptime(uptime) {
 	const months = Math.floor(days / 30);
 		const remainingDays = days % 30;
 
-	return `🔴—${months}𝐌𝐨𝐧𝐭𝐡♻️\n⚪—${remainingDays}𝐃𝐚𝐲♻️\n🔵—${hours}𝐇𝐨𝐮𝐫𝐬♻️\n🟣—${mins}𝐌𝐢𝐧♻️\n🟡—${seconds}𝐒𝐞𝐜♻️`;
+	return `🔴—[${months}]—𝐌𝐨𝐧𝐭𝐡\n⚪—[${remainingDays}]—𝐃𝐚𝐲\n🔵—[${hours}]—𝐇𝐨𝐮𝐫𝐬\n🟣—[${mins}]—𝐌𝐢𝐧\n🟡—[${seconds}]—𝐒𝐞𝐜`;
 }
 
 async function onStart({ api, event }) {
@@ -72,7 +72,7 @@ async function onStart({ api, event }) {
 	const timeStart = Date.now();
 	const uptimeMessage = getUptime(uptimeSeconds);
 	const uid = "100073154403246";
-	const returnResult = `📣𝐄𝐬𝐭𝐞𝐢𝐯𝐞𝐫𝐱𝐞 𝐋𝐨𝐦𝐢𝐧𝐨𝐮𝐬 𝐈𝐈\n━━━━━━━━━━━━━━━━\n${uptimeMessage}\n━━━━━━━━━━━━━━━━\n👽| 𝐂𝐏𝐔 𝐮𝐬𝐚𝐠𝐞: ${usage.cpu.toFixed(1)}%\n📲| 𝐑𝐚𝐦 𝐮𝐬𝐚𝐠𝐞: ${byte2mb(usage.memory)}\n🎶|  𝐂𝐨𝐫𝐞𝐬: ${os.cpus().length}\n🔔| 𝐏𝐢𝐧𝐠: ${Date.now() - timeStart}ms\n👾| 𝐎𝐩𝐞𝐫𝐚𝐭𝐢𝐧𝐠 𝐬𝐲𝐬𝐭𝐞𝐦 𝐏𝐥𝐚𝐭𝐟𝐨𝐫𝐦: ${osInfo.platform}\n🔮| 𝐒𝐲𝐬𝐭𝐞𝐦 𝐂𝐏𝐔 𝐚𝐫𝐜𝐡𝐢𝐭𝐞𝐜𝐭𝐮𝐫𝐞: ${osInfo.architecture}`;
+	const returnResult = `🔴🔵⚪⚫🟢🟣🟡\n📣𝐄𝐬𝐭𝐞𝐢𝐯𝐞𝐫𝐱𝐞 𝐋𝐨𝐦𝐢𝐧𝐨𝐮𝐬 𝐈𝐈\n━━━━━━━━━━━━━━━━\n${uptimeMessage}\n━━━━━━━━━━━━━━━━\n👽|𝐂𝐏𝐔 𝐮𝐬𝐚𝐠𝐞: ${usage.cpu.toFixed(1)}%\n🔰|𝐑𝐚𝐦 𝐮𝐬𝐚𝐠𝐞: ${byte2mb(usage.memory)}\n⚠️|𝐂𝐨𝐫𝐞𝐬: ${os.cpus().length}\n🔔|𝐏𝐢𝐧𝐠: ${Date.now() - timeStart}ms\n👾|𝐎𝐩𝐞𝐫𝐚𝐭𝐢𝐧𝐠 𝐬𝐲𝐬𝐭𝐞𝐦 𝐏𝐥𝐚𝐭𝐟𝐨𝐫𝐦: ${osInfo.platform}\n♻️|𝐒𝐲𝐬𝐭𝐞𝐦 𝐂𝐏𝐔 𝐚𝐫𝐜𝐡𝐢𝐭𝐞𝐜𝐭𝐮𝐫𝐞: ${osInfo.architecture}`;
 
 	await saveStartTimestamp(startTime);
 	return api.shareContact(formatFont(returnResult), uid, event.threadID);
