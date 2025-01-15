@@ -9,7 +9,7 @@ module.exports = {
   config: {
     name: "help",
     version: "1.17",
-    author: "NTKhang", // original author leeza 
+    author: "Esteiverxe", // original author leeza 
     countDown: 0,
     role: 0,
     shortDescription: {
@@ -46,12 +46,12 @@ module.exports = {
 
       Object.keys(categories).forEach((category) => {
         if (category !== "info") {
-          msg += `\n 🔵${category.toUpperCase()}🔵\n`;
+          msg += `\n 🔰${category.toUpperCase()}🔰\n`;
 
 
           const names = categories[category].commands.sort();
           for (let i = 0; i < names.length; i += 3) {
-            const cmds = names.slice(i, i + 3).map((item) => `\n  —🔰${item}🔰—`);
+            const cmds = names.slice(i, i + 3).map((item) => `\n  —🔴${item}🔴—`);
             msg += `\n ${cmds.join(" ".repeat(Math.max(1, 10 - cmds.join("").length)))}`;
           }
 
@@ -62,7 +62,7 @@ module.exports = {
       const totalCommands = commands.size;
       msg += `🔰𝐓𝐨𝐭𝐚𝐥🏁${totalCommands}🏁𝐜𝐨𝐦𝐦𝐚𝐧𝐝𝐬💫\n╭‣ 𝐀𝐝𝐦𝐢𝐧 👑\n╰‣ 𝐄𝐬𝐭𝐞𝐢𝐯𝐞𝐫𝐱𝐞 𝐋𝐨𝐦𝐢𝐧𝐨𝐮𝐬 𝐈𝐈\n╭‣ 𝐅𝐚𝐜𝐞𝐛𝐨𝐨𝐤 ⓕ\n╰‣m.me/100073154403246`;
       msg += `\n╭‣ 𝐎𝐭𝐡𝐞𝐫 𝐃𝐞𝐭𝐚𝐢𝐥𝐬⚠️\n╰‣If you Don't know how to use commands Then Type /help [commandName] to see command usages.\n━━━━━━━━━━━━━━━`;
-      msg += `\n╭──── • 🔵🔴 • ─────╮\n𝐄𝐬𝐭𝐞𝐢𝐯𝐞𝐫𝐱𝐞 𝐋𝐨𝐦𝐢𝐧𝐨𝐮𝐬 𝐈𝐈\n╰──── • 🔵🔴 • ─────╯`; // its not decoy so change it if you want 
+      msg += `\n╭──── • 🔵🔴 • ─────╮\n 𝐄𝐬𝐭𝐞𝐢𝐯𝐞𝐫𝐱𝐞 𝐋𝐨𝐦𝐢𝐧𝐨𝐮𝐬 𝐈𝐈\n╰──── • 🔵🔴 • ─────╯`; // its not decoy so change it if you want 
 
       const helpListImages = [
         "https://i.postimg.cc/c4nYrnqS/be9e77ea94294e6f96a06af32a16adeb.jpg", // add image link here
