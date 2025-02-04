@@ -3,13 +3,13 @@ const axios = require("axios");
 const path = require("path");
 const { getPrefix } = global.utils;
 const { commands, aliases } = global.GoatBot;
-const doNotDelete = "[ 𝐑𝐀𝐅𝐈 ]"; 
+const doNotDelete = "[ 𝗔 𝗥 𝗬 𝗔 𝗡 ]"; 
 
 module.exports = {
   config: {
     name: "help",
     version: "1.17",
-    author: "RAFI",
+    author: "ArYan",
     countDown: 5,
     role: 0,
     shortDescription: {
@@ -32,9 +32,9 @@ module.exports = {
 
     if (args.length === 0) {
       const categories = {};
-      let msg = "";
+      let msg = "╭───────◯";
 
-      msg += ``; 
+      msg += `\n│ 𝗛𝗘𝗟𝗣 𝗟𝗜𝗦𝗧\n╰────────────◯`; 
 
       for (const [name, value] of commands) {
         if (value.config.role > 1 && role < value.config.role) continue;
@@ -46,7 +46,7 @@ module.exports = {
 
       Object.keys(categories).forEach((category) => {
         if (category !== "info") {
-          msg += `\n╭─────◯『  ${category.toUpperCase()}  』`;
+          msg += `\n╭─────◯ 〔 ${category.toUpperCase()} 〕`;
 
 
           const names = categories[category].commands.sort();
@@ -60,9 +60,9 @@ module.exports = {
       });
 
       const totalCommands = commands.size;
-      msg += `\n\n╭─────✰[𝗘𝗡𝗝𝗢𝗬]\n│>𝗧𝗢𝗧𝗔𝗟 𝗖𝗠𝗗𝗦: [${totalCommands}].\n│𝗧𝗬𝗣𝗘𝖳:[ ${prefix}𝗛𝗘𝗟𝗣 𝗧𝗢\n│<𝗖𝗠𝗗> 𝗧𝗢 𝗟𝗘𝗔𝗥𝗡 𝗧𝗛𝗘 𝗨𝗦𝗔𝗚𝗘.]\n╰────────────✰`;
+      msg += `\n\n╭─────◯[𝗘𝗡𝗝𝗢𝗬]\n│>𝗧𝗢𝗧𝗔𝗟 𝗖𝗠𝗗𝗦: [${totalCommands}].\n│𝗧𝗬𝗣𝗘𝖳:[ ${prefix}𝗛𝗘𝗟𝗣 𝗧𝗢\n│𝗖𝗠𝗗 𝗧𝗢 𝗟𝗘𝗔𝗥𝗡 𝗨𝗦𝗔𝗚𝗘]\n╰────────────◯`;
       msg += ``;
-      msg += `
+      msg += ``; 
 
  				const helpListImages = [ "https://i.postimg.cc/3w4WcMKH/2ffecd28781280016eda8f2008e3d9fd.jpg" ];
 
