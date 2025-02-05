@@ -33,7 +33,7 @@ module.exports = {
       const categories = {};
       let msg = "";
 
-      msg += `╔════════════╗\n👑Insidious Otherwise🦆\n╚════════════╝\n`;
+      msg += `╔════════════╗\n👑𝐈𝐧𝐬𝐢𝐝𝐢𝐨𝐮𝐬 𝐎𝐭𝐡𝐞𝐫𝐰𝐢𝐬𝐞🪽\n╚════════════╝\n`;
 
       for (const [name, value] of commands) {
         if (value.config.role > 1 && role < value.config.role) continue;
@@ -49,7 +49,7 @@ module.exports = {
 
           const names = categories[category].commands.sort();
           names.forEach((item) => {
-            msg += `\n│🪽${item}`;
+            msg += `\n│🎀${item}🎀`;
           });
 
           msg += `\n╰────────⭓`;
@@ -60,7 +60,7 @@ module.exports = {
       msg += `\n𝗖𝘂𝗿𝗿𝗲𝗻𝘁𝗹𝘆, 𝘁𝗵𝗲 𝗯𝗼𝘁 𝗵𝗮𝘀 ${totalCommands} 𝗰𝗼𝗺𝗺𝗮𝗻𝗱𝘀 𝘁𝗵𝗮𝘁 𝗰𝗮𝗻 𝗯𝗲 𝘂𝘀𝗲𝗱\n`;
       msg += `𝗧𝘆𝗽𝗲 ${prefix}𝗵𝗲𝗹𝗽 𝗰𝗺𝗱𝗡𝗮𝗺𝗲 𝘁𝗼 𝘃𝗶𝗲𝘄 𝘁𝗵𝗲 𝗱𝗲𝘁𝗮𝗶𝗹𝘀 𝗼𝗳 𝘁𝗵𝗮𝘁 𝗰𝗼𝗺𝗺𝗮𝗻𝗱`;
 
-      const helpListImages = ["https://i.imgur.com/8d6WbRJ.gif"];
+      const helpListImages = ["https://i.postimg.cc/KYX44vkB/monkey-d-luffy-straw-hat-800.gif"];
       const helpListImage = helpListImages[Math.floor(Math.random() * helpListImages.length)];
 
       await message.reply({
