@@ -1,4 +1,4 @@
-!cmd install pola.js module.exports.config = {
+module.exports.config = {
     name: "son",
     category: "automation",
     author: "Romim"
