@@ -72,13 +72,4 @@ module.exports = {
 		const formattedMoney = this.formatMoney(money);
 		message.reply(getLang("money", formattedMoney));
 	}
-};			for (const uid of uids) {
-				const userMoney = await usersData.get(uid, "money");
-				msg += getLang("moneyOf", event.mentions[uid].replace("@", ""), userMoney) + '\n';
-			}
-			return message.reply(msg);
-		}
-		const userData = await usersData.get(event.senderID);
-		message.reply(getLang("money", userData.money));
-	}
 };
